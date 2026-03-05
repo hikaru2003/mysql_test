@@ -36,7 +36,18 @@ function test_() {
         esac
     done
 
-    taskset -c 1-7,9-15 sysbench oltp_read_write \
+    echo "# Environmental Setting
+- innodb_read_io_threads = 4
+- innodb_write_io_threads = 4
+- innodb_spin_wait_delay = 6
+- innodb_spin_wait_pause_multiplier = 5
+- innodb_sync_spin_loops = 30
+
+# Command
+$> ./test_sysbench.sh $@
+" > "${filename}.txt"
+
+	taskset -c 1-7,9-15 sysbench oltp_read_write \
         --mysql-host=127.0.0.1 \
         --mysql-port=3306 \
         --mysql-user=root \
@@ -47,7 +58,7 @@ function test_() {
         --threads="$threads" \
         --time="$time" \
         --rand-type="$rand_type" \
-        run > "${filename}.txt"
+        run >> "${filename}.txt"
 }
 
 # スクリプトとして実行された場合はコマンドライン引数をそのまま渡す
