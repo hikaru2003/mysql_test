@@ -1,0 +1,233 @@
+Script started on 2026-02-20 15:05:56+09:00 [TERM="tmux-256color" TTY="/dev/pts/2" COLUMNS="229" LINES="65"]
+1024
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                     k..ysql_test/tps\[0m[27m[24m[J🐬[35m ~/mysql_test/tps @ann[00m🐢 [39m
+$> [K[?1h=[?2004heecho ''s'e't' '[7mi[7mnnodb_spin_wait_pause_multiplier = 5[27m'[37D[27mi[27mn[27mn[27mo[27md[27mb[27m_[27ms[27mp[27mi[27mn[27m_[27mw[27ma[27mi[27mt[27m_[27mp[27ma[27mu[27ms[27me[27m_[27mm[27mu[27ml[27mt[27mi[27mp[27ml[27mi[27me[27mr[27m [27m=[27m [27m5[1C[?1l>[?2004l
+kecho\set innodb_spin_wait_pause_multiplier = 5
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                     k..ysql_test/tps\[0m[27m[24m[J🦔[35m ~/mysql_test/tps @ann[00m🐐 [39m
+$> [K[?1h=[?2004heecho 'set innodb_spin_wait_pause_multiplier = 5'[41D[11P[9Cdelay = 20'                     [21D0' [?1l>[?2004l
+kecho\spin_wait_delay = 0
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                     k..ysql_test/tps\[0m[27m[24m[J🐒[35m ~/mysql_test/tps @ann[00m🐐 [39m
+$> [K[?1h=[?2004httaskset -c 1-7,9-15 sysbench oltp_read_write \
+    --mysql-host=127.0.0.1 \[K
+    --mysql-port=3306 \[K
+    --mysql-user=root \[K
+    --mysql-password=password \[K
+    --mysql-db=sbtest \[K
+    --tables=1 \[K
+    --table_size=100000 \[K
+    --threads=32 \[K
+    --time=60 \[K
+    --rand-type=pareto \[K
+    run[K[11A[42C[?1l>[?2004l[11B
+ktaskset\sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 32
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            373884
+        write:                           106204
+        other:                           53174
+        total:                           533262
+    transactions:                        26468  (440.78 per sec.)
+    queries:                             533262 (8880.53 per sec.)
+    ignored errors:                      238    (3.96 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+General statistics:
+    total time:                          60.0465s
+    total number of events:              26468
+
+Latency (ms):
+         min:                                    4.95
+         avg:                                   72.57
+         max:                                  394.41
+         95th percentile:                      150.29
+         sum:                              1920691.84
+
+Threads fairness:
+    events (avg/stddev):           827.1250/20.72
+    execution time (avg/stddev):   60.0216/0.01
+
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                     k..ysql_test/tps\[0m[27m[24m[J🐧[35m ~/mysql_test/tps @ann[00m🐣 [39m
+$> [K[?1h=[?2004heecho 'spin_wait_delay = 0'' 1'[?1l>[?2004l
+kecho\spin_wait_delay = 1
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                     k..ysql_test/tps\[0m[27m[24m[J🐺[35m ~/mysql_test/tps @ann[00m🐊 [39m
+$> [K[?1h=[?2004httaskset -c 1-7,9-15 sysbench oltp_read_write \
+    --mysql-host=127.0.0.1 \[K
+    --mysql-port=3306 \[K
+    --mysql-user=root \[K
+    --mysql-password=password \[K
+    --mysql-db=sbtest \[K
+    --tables=1 \[K
+    --table_size=100000 \[K
+    --threads=32 \[K
+    --time=60 \[K
+    --rand-type=pareto \[K
+    run[K[11A[42C[?1l>[?2004l[11B
+ktaskset\sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 32
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            375508
+        write:                           106669
+        other:                           53401
+        total:                           535578
+    transactions:                        26579  (442.59 per sec.)
+    queries:                             535578 (8918.43 per sec.)
+    ignored errors:                      243    (4.05 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+General statistics:
+    total time:                          60.0510s
+    total number of events:              26579
+
+Latency (ms):
+         min:                                    5.41
+         avg:                                   72.27
+         max:                                  398.86
+         95th percentile:                      150.29
+         sum:                              1920762.60
+
+Threads fairness:
+    events (avg/stddev):           830.5938/20.83
+    execution time (avg/stddev):   60.0238/0.01
+
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                     k..ysql_test/tps\[0m[27m[24m[J🦭[35m ~/mysql_test/tps @ann[00m🦭 [39m
+$> [K[?1h=[?2004heecho 'spin_wait_delay = 6()default[1Cdefault [8D[1C[1C[1C[1C[1C[1C[1C);[?1l>[?2004l
+[0m[27m[24m[Jquote> [K[?1h=[?2004httaskset -c 1-7,9-15 sysbench oltp_read_write \
+    --mysql-host=127.0.0.1 \[K
+    --mysql-port=3306 \[K
+    --mysql-user=root \[K
+    --mysql-password=password \[K
+    --mysql-db=sbtest \[K
+    --tables=1 \[K
+    --table_size=100000 \[K
+    --threads=32 \[K
+    --time=60 \[K
+    --rand-type=pareto \[K
+    run[K[11A[46C[42D                                          [1B[K[1B[K[1B[K[1B[K[1B[K[1B[K[1B[K[1B[K[1B[K[1B[K[1B[K[11A[11C  t  '[?1l>[?2004l[1Bkecho\spin_wait_delay = 6(default);
+
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                     k..ysql_test/tps\[0m[27m[24m[J🐰[35m ~/mysql_test/tps @ann[00m🦊 [39m
+$> [K[?1h=[?2004hecho 'spin_wait_delay = 6(default);
+'[KM[37C[35D                                   [1B[KM[3Cttaskset -c 1-7,9-15 sysbench oltp_read_write \[1B    --mysql-host=127.0.0.1 \[K
+    --mysql-port=3306 \[K
+    --mysql-user=root \[K
+    --mysql-password=password \[K
+    --mysql-db=sbtest \[K
+    --tables=1 \[K
+    --table_size=100000 \[K
+    --threads=32 \[K
+    --time=60 \[K
+    --rand-type=pareto \[K
+    run[K[11A[42C[?1l>[?2004l[11B
+ktaskset\sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 32
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            373912
+        write:                           106159
+        other:                           53158
+        total:                           533229
+    transactions:                        26450  (440.48 per sec.)
+    queries:                             533229 (8880.04 per sec.)
+    ignored errors:                      258    (4.30 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+General statistics:
+    total time:                          60.0459s
+    total number of events:              26450
+
+Latency (ms):
+         min:                                    5.08
+         avg:                                   72.62
+         max:                                  304.41
+         95th percentile:                      150.29
+         sum:                              1920692.08
+
+Threads fairness:
+    events (avg/stddev):           826.5625/22.87
+    execution time (avg/stddev):   60.0216/0.01
+
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                     k..ysql_test/tps\[0m[27m[24m[J🐐[35m ~/mysql_test/tps @ann[00m🐺 [39m
+$> [K[?1h=[?2004heecho 'spin_wait_deya  lay = 20'[?1l>[?2004l
+kecho\spin_wait_delay = 20
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                     k..ysql_test/tps\[0m[27m[24m[J🐧[35m ~/mysql_test/tps @ann[00m🐻 [39m
+$> [K[?1h=[?2004httaskset -c 1-7,9-15 sysbench oltp_read_write \
+    --mysql-host=127.0.0.1 \[K
+    --mysql-port=3306 \[K
+    --mysql-user=root \[K
+    --mysql-password=password \[K
+    --mysql-db=sbtest \[K
+    --tables=1 \[K
+    --table_size=100000 \[K
+    --threads=32 \[K
+    --time=60 \[K
+    --rand-type=pareto \[K
+    run[K[11A[42C[?1l>[?2004l[11B
+ktaskset\sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 32
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            371588
+        write:                           105555
+        other:                           52848
+        total:                           529991
+    transactions:                        26306  (438.10 per sec.)
+    queries:                             529991 (8826.55 per sec.)
+    ignored errors:                      236    (3.93 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+General statistics:
+    total time:                          60.0430s
+    total number of events:              26306
+
+Latency (ms):
+         min:                                    5.38
+         avg:                                   73.01
+         max:                                  321.46
+         95th percentile:                      150.29
+         sum:                              1920615.41
+
+Threads fairness:
+    events (avg/stddev):           822.0625/22.23
+    execution time (avg/stddev):   60.0192/0.01
+
+[1m[7m%[27m[1m[0m                                                                                                                                                                                                                                     k..ysql_test/tps\[0m[27m[24m[J🐢[35m ~/mysql_test/tps @ann[00m🐧 [39m
+$> [K[?1h=[?2004heexit[?1l>[?2004l
+kexit\
+Script done on 2026-02-20 15:19:41+09:00 [COMMAND_EXIT_CODE="0"]
