@@ -1,0 +1,47 @@
+# Environmental Setting
+- innodb_read_io_threads = 4
+- innodb_write_io_threads = 4
+- innodb_spin_wait_delay = 6
+- innodb_spin_wait_pause_multiplier = 5
+- innodb_sync_spin_loops = 30
+
+# Command
+$> ./test_sysbench.sh filename=multiplier=5
+
+sysbench 1.0.20 (using system LuaJIT 2.1.0-beta3)
+
+Running the test with following options:
+Number of threads: 32
+Initializing random number generator from current time
+
+
+Initializing worker threads...
+
+Threads started!
+
+SQL statistics:
+    queries performed:
+        read:                            9394
+        write:                           2675
+        other:                           1339
+        total:                           13408
+    transactions:                        668    (10.39 per sec.)
+    queries:                             13408  (208.54 per sec.)
+    ignored errors:                      3      (0.05 per sec.)
+    reconnects:                          0      (0.00 per sec.)
+
+General statistics:
+    total time:                          64.2897s
+    total number of events:              668
+
+Latency (ms):
+         min:                                  108.62
+         avg:                                 2971.91
+         max:                                 9550.28
+         95th percentile:                     8333.38
+         sum:                              1985238.83
+
+Threads fairness:
+    events (avg/stddev):           20.8750/4.67
+    execution time (avg/stddev):   62.0387/1.31
+
